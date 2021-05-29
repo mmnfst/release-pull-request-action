@@ -1,0 +1,6 @@
+name: "Release Pull Request Action"
+description: "Github Action to create Release Pull Request with description generated form previous merged Feature Pull Requests"
+author: "DmitrySadovnikov"
+runs:
+  using: "docker"
+  image: "Dockerfile"
