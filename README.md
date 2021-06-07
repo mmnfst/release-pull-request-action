@@ -16,11 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: DmitrySadovnikov/release-pull-request-action@master
+      - uses: mmnfst/release-pull-request-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }} # token of your account
           PULL_REQUEST_FEATURE_BRANCH: "staging"
           PULL_REQUEST_BASE_BRANCH: "master"
+          PULL_REQUEST_REVIEWERS: DmitrySadovnikov,aderyabin
+          PULL_REQUEST_ASSIGNEES: DmitrySadovnikov,aderyabin
+          PULL_REQUEST_LABELS: Release,Review required
 ```
 
 ### Example
