@@ -39,7 +39,7 @@ def pull_request_body(pull_request)
     pulls = client.commit_pulls(CONFIG[:repository], c[:sha], headers: { accept: CONFIG[:accept]})
     pulls.map do |pr|
       current_group = nil
-      pr[:body].each_line do |l|
+      pr[:body]&.each_line do |l|
         if l.start_with?('##')
           current_group = l
         elsif l.start_with?('*') && l.strip != '*'
