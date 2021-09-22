@@ -54,7 +54,7 @@ def pull_request_body(pull_request)
   end
   body = ''
   groups.each do |k, v|
-    body << k
+    body << k.to_s
     body << v.uniq.join
   end
   body
